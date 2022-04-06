@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+		<title>result</title>
+		<style>
+		body{
+			margin: 0;
+			padding: 0;}
+
+		.con{
+			background:url('https://images.unsplash.com/photo-1579240637470-e029acf584a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
+			background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+		}
+
+		.results{
+			
+			font-size: 65px;
+			color:black;
+			font-family: 'Amaranth';
+
+		}
+		
+
+
+
+
+	</style>
+	</head>
+
+    <body>
+
+
+		<div class="con" >
+
+			<div class="results">
+				{% if prediction==0 %}
+					<h1>Prediction : <span class='safe'>LESS THAN 50k  </span></h1>
+
+					
+				{% elif prediction==1 %}
+					<h1>Prediction : <span class='danger'>GREATER THAN 50k</span></h1>
+					
+				{% endif %}
+			</div>
+
+	
+
+	
+
+		
+
+	</body>
+</html>

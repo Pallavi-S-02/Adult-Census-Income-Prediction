@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Cutive' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Zen Dots' rel='stylesheet'>
+    <title>https://www.adult salary </title>
+</head>
+   
+
+<body>
+    <div class="banner-text"  >
+        <h2>SALARY PREDICTION</h2>
+    </div>
+
+    <div class="container" >
+        <div class="rows">
+        <div class="class" >
+ 
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <h3>Age</h3>
+            <input id="age" name="age" type="number ">
+
+            <h3>WorkClass</h3>
+            <select name= workclass method="GET" action="/" id ="workclass">
+                {% for i in cla %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+
+            <h3>Education</h3>
+            <select name= education method="GET" action="/"id="education">
+                {% for i in educ %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+            
+            <h3>Marital Status</h3>
+            <select name= marital_status method="GET" action="/" id="marital_status">
+                {% for i in mari %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+            
+            
+        </div>
+
+        <div class="class" >
+
+            <h3>Occupation</h3>
+            <select name= occupation method="GET" action="/" id="occupation">
+                {% for i in occ %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+            
+            <h3>Relationship</h3>
+            <select name= relationship method="GET" action="/" id="relationship">
+                {% for i in rela %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+
+            <h3>Race</h3>
+            <select name= race method="GET" action="/" id="race">
+                {% for i in race %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+            
+            
+            <h3> Sex </h3>
+            <select name="sex" id="sex" required="required">
+                <option value="cap_shape">male</option>
+                <option value="cap_shape">female</option>
+            </select>
+
+
+        </div>
+        <div class="class">
+
+            <h3>Capital Gain</h3>
+            <input id="capital_gain" name="capital_gain" type="number ">
+
+            <h3>Capital Loss</h3>
+            <input id="capital_loss" name="capital_loss" type="number ">
+            
+
+            <h3>Hours Per Week</h3>
+            <input id="hours_per_week" name="hours_per_week" type="number ">
+            
+            <h3>Country</h3>
+            <select name= country method="GET" action="/" id="country">
+                {% for i in coun %}
+                <option value= "{{ i }}" SELECTED>{{ i }}</option>"
+                {% endfor %}
+            </select>
+            
+        </div>
+        
+        </div>
+
+    </div>
+
+    <div class="button">
+        <button type="submit" class="btn"><b>PREDICT</b></button>
+    </div>
+
+            
+
+        </form>
+        <br>
+        <br>
+         
+
+    <style>
+
+        body {  
+            background: url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height:100vh;
+            margin: 0;
+            padding: 0;
+
+        }
+         
+
+        
+
+        .banner-text h2{
+            
+            color: white;
+            font-family: 'Zen Dots';font-size: 60px;
+            text-align: center;
+
+
+        }
+
+        .container{
+            width:800px;
+            margin-top: 0px;
+            margin-bottom: 80px;
+            
+            margin-left: 580px;
+            text-align: center;
+            display: table;
+            box-sizing: border-box;
+            font-family: 'Cutive';font-size: 22px;
+        }
+
+        .rows{
+            margin:10px 0;
+        }
+
+        .class{
+            display: table-cell;
+            padding: 10px;
+            width: 33.3333;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button{
+            margin-top: -350px;
+            margin-left: 1400px;
+        }
+
+        
+        .btn{
+            width: 160px;
+            height: 50px;
+            text-orientation: none;
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 0;
+            border-radius: 14px;
+            border: .5px solid #fff;
+        	
+        }
+
+        .btn:hover{
+            color: #255784
+        }
+
+        #age {
+            font-size: 15px;
+            width: 90px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+
+        }
+    
+        #workclass {
+            font-size: 15px;
+            width: 130px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+            
+
+        }
+
+        
+        #education {
+            font-size: 15px;
+            width: 140px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+            
+        }
+        
+        #marital_status {
+            font-size: 15px;
+            width: 145px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+        }
+        
+        #occupation {
+            font-size: 15px;
+            width: 140px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+        }
+
+
+
+        
+        
+        
+        #relationship
+        {
+            font-size: 15px;
+            width: 110px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+      
+        }
+
+        #race
+        {
+            font-size: 15px;
+            width: 130px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+        }
+
+
+       
+        
+        
+        #sex
+        {
+            font-size: 15px;
+            width: 90px;
+            height: 40px;
+            top:0px;
+            text-align: center;
+            border-radius: 14px;
+        }
+        
+       
+        
+        #capital_gain {
+            font-size: 15px;
+            width: 85px;
+            height: 40px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        
+        }
+    
+        
+        #capital_loss {
+            font-size: 15px;
+            width: 85px;
+            height: 40px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #hours_per_week {
+            font-size: 15px;
+            width: 85px;
+            height: 40px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #country{
+            font-size: 15px;
+            width: 145px;
+            height: 40px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;  }
+        
+        
+    </style>
+               
+
+    
+</body>
+
+</html>
